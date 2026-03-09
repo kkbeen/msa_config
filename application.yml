@@ -25,18 +25,12 @@ spring:
         password: kk392766
     
     jpa:
-        hibernate: 
-        # create, create-drop, update, none
-        ddl-auto:  create
-        # 콘솔출력
-        show-sql: true     
-        properties:
+        database: mariadb
+        database-platform: org.hibernate.dialect.MariaDBDialect
         hibernate:
-            # h2
-            # dialect: org.hibernate.dialect.H2Dialect
-            # mariadb
-            dialect: org.hibernate.dialect.MariaDBDialect
-            format_sql: true
+            ddl-auto:  create
+        show-sql: true     
+
 
     data:
         redis:
