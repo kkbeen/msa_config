@@ -11,7 +11,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://lgcns-gyubs.c1e4ok4u0oku.us-east-2.rds.amazonaws.com:3306/inspire?useSSL=true&trustServerCertificate=true
     username: root
-    password: kk392766
+    password: kk39276655
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MariaDBDialect
