@@ -1,44 +1,29 @@
 server:
-  # eureka server 의해서 임의 포트가 할당(spring server)
-  port: 0
-
-
-# eureka client user service -> eureka server
-eureka:
-    client:
-        service-url:
-            defaultZone: http://localhost:8761/eureka/
-
-
+  port: 8080
+# eureka 제거 (k8s에서 불필요)
 spring:
-    rabbitmq:
-    host: localhost
+  rabbitmq:
+    host: rabbitmq-service
     port: 5672
     username: guest
     password: guest
-
-    # mariadb settings
-    datasource:
-        driver-class-name: org.mariadb.jdbc.Driver
-        url: jdbc:mariadb://localhost:3306/inspire  
-        username: root
-        password: kk392766
-    
-    jpa:
-        database: mysql
-        database-platform: org.hibernate.dialect.MariaDBDialect
-        hibernate:
-            ddl-auto:  create
-        show-sql: true     
-
-
-    data:
-        redis:
-            host: localhost
-            port: 6379
-            password: 
-            timeout: 6000ms
-
-    cloud:
-        bus:
-            enabled: true
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://lgcns-gyubs.c1e4ok4u0oku.us-east-2.rds.amazonaws.com:3306/inspire
+    username: root
+    password: kk392766
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  data:
+    redis:
+      host: redis-service
+      port: 6379
+      password: 
+      timeout: 6000ms
+  cloud:
+    bus:
+      enabled: true
